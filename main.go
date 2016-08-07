@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-	mc := memcache.New(os.Args...)
+	mc := memcache.New(os.Args[1:]...)
 	if err := mc.Set(&memcache.Item{Key: "__mcping", Value: []byte("1")}); err != nil {
 		log.Fatal(err)
 	}
